@@ -31,7 +31,7 @@ get_header(); ?>
 
 			<?php endwhile; ?>
 
-			<?php _strangetrange_content_nav( 'nav-below' ); ?>
+			<?php _strange_content_nav( 'nav-below' ); ?>
 
 		<?php else : ?>
 

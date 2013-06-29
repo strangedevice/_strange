@@ -19,13 +19,13 @@
 /**
  * Setup the WordPress core custom header feature.
  *
- * @uses _strangetrange_header_style()
- * @uses _strangetrange_admin_header_style()
- * @uses _strangetrange_admin_header_image()
+ * @uses _strange_header_style()
+ * @uses _strange_admin_header_style()
+ * @uses _strange_admin_header_image()
  *
  * @package _strange
  */
-function _strangetrange_custom_header_setup() {
+function _strange_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( '_strange_custom_header_args', array(
 		'default-image'          => '',
 		'default-text-color'     => '000',
@@ -43,9 +43,9 @@ if ( ! function_exists( '_strange_header_style' ) ) :
 /**
  * Styles the header image and text displayed on the blog
  *
- * @see _strangetrange_custom_header_setup().
+ * @see _strange_custom_header_setup().
  */
-function _strangetrange_header_style() {
+function _strange_header_style() {
 	$header_text_color = get_header_textcolor();
 
 	// If no custom options for text are set, let's bail
@@ -77,15 +77,15 @@ function _strangetrange_header_style() {
 	</style>
 	<?php
 }
-endif; // _strangetrange_header_style
+endif; // _strange_header_style
 
 if ( ! function_exists( '_strange_admin_header_style' ) ) :
 /**
  * Styles the header image displayed on the Appearance > Header admin panel.
  *
- * @see _strangetrange_custom_header_setup().
+ * @see _strange_custom_header_setup().
  */
-function _strangetrange_admin_header_style() {
+function _strange_admin_header_style() {
 ?>
 	<style type="text/css">
 		.appearance_page_custom-header #headimg {
@@ -105,15 +105,15 @@ function _strangetrange_admin_header_style() {
 	</style>
 <?php
 }
-endif; // _strangetrange_admin_header_style
+endif; // _strange_admin_header_style
 
 if ( ! function_exists( '_strange_admin_header_image' ) ) :
 /**
  * Custom header image markup displayed on the Appearance > Header admin panel.
  *
- * @see _strangetrange_custom_header_setup().
+ * @see _strange_custom_header_setup().
  */
-function _strangetrange_admin_header_image() {
+function _strange_admin_header_image() {
 	$style        = sprintf( ' style="color:#%s;"', get_header_textcolor() );
 	$header_image = get_header_image();
 ?>
@@ -126,4 +126,4 @@ function _strangetrange_admin_header_image() {
 	</div>
 <?php
 }
-endif; // _strangetrange_admin_header_image
+endif; // _strange_admin_header_image

@@ -19,7 +19,7 @@ if ( ! function_exists( '_strange_setup' ) ) :
  * before the init hook. The init hook is too late for some features, such as indicating
  * support post thumbnails.
  */
-function _strangetrange_setup() {
+function _strange_setup() {
 
 	/**
 	 * Make theme available for translation
@@ -61,13 +61,13 @@ function _strangetrange_setup() {
 		'default-image' => '',
 	) ) );
 }
-endif; // _strangetrange_setup
+endif; // _strange_setup
 add_action( 'after_setup_theme', '_strange_setup' );
 
 /**
  * Register widgetized area and update sidebar with default widgets
  */
-function _strangetrange_widgets_init() {
+function _strange_widgets_init() {
 	register_sidebar( array(
 		'name'          => __( 'Sidebar', '_strange' ),
 		'id'            => 'sidebar-1',
@@ -82,7 +82,7 @@ add_action( 'widgets_init', '_strange_widgets_init' );
 /**
  * Enqueue scripts and styles
  */
-function _strangetrange_scripts() {
+function _strange_scripts() {
 	wp_enqueue_style( '_s-style', get_stylesheet_uri() );
 
 	wp_enqueue_script( '_s-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
